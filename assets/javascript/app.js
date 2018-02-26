@@ -29,25 +29,21 @@ $(".topic-button").on("click", function () {
 
         for (var i = 0; i <= 10; i++) {
 
-            // set imageURL variable
-
             var imageUrl = response.data.image_original_url;
             console.log(results[i].images_original_url);
             var topicimage = $("<img>");
             var topicDiv = $("<div>");
-            // var p = $("<p>").text("Rating: " + results[i].rated);
             var topicimage = $("<img>");
             topicimage.attr("src", results[i].images.fixed_height_still);
             topicDiv.append(p);
             topicDiv.append(topicimage);
             $("#topics").prepend(topicDiv);
 
-            // create DOM statements
             topicimage.attr("src", imageUrl);
             topicimage.attr("alt", "topicimage");
 
-            // prepend DOM statements to images ID
             $("#topic-image").prepend(topicimage);
+            
         }
     });
 });
@@ -55,7 +51,6 @@ $(".topic-button").on("click", function () {
 function renderButtons() {
 
     $("#buttons-view").empty();
-
 
     for (var i = 0; i < topics.length; i++) {
 
